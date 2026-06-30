@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <div class="container">
+        <div class="top-bar">
+            <i class="material-icons" id="color">circle</i>
+            <div class="app-actions">
+                <i id="minimize-button" class="material-icons">minimize</i>
+                <i id="close-button" class="material-icons">close</i>
+            </div>
+        </div>
+        <div class="timer-wrapper">
+            <svg class="progress-ring">
+                <circle class="progress-ring-circle"></circle>
+                <circle class="progress-ring-progress work" id="progress"></circle>
+            </svg>
+            <div class="timer-display">
+                <div class="time" id="timeDisplay">25:00</div>
+                <div class="session-type" id="sessionType">Focus Session</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn primary" id="startBtn">Start</button>
+            <button class="btn" id="pauseBtn">Pause</button>
+            <button class="btn" id="resetBtn">Reset</button>
+            <button class="btn" id="switchBtn" title="Focus session">Focus</button>
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <div class="setting-label">Focus</div>
+                <div class="setting-controls">
+                    <button class="setting-btn" id="workMinus">−</button>
+                    <div class="setting-value" id="workTime">25</div>
+                    <button class="setting-btn" id="workPlus">+</button>
+                </div>
+            </div>
+            <div class="setting-group">
+                <div class="setting-label">Break</div>
+                <div class="setting-controls">
+                    <button class="setting-btn" id="breakMinus">−</button>
+                    <div class="setting-value" id="breakTime">5</div>
+                    <button class="setting-btn" id="breakPlus">+</button>
+                </div>
+            </div>
+            <div class="setting-group">
+                <div class="setting-label">Long Break</div>
+                <div class="setting-controls">
+                    <button class="setting-btn" id="longBreakMinus">−</button>
+                    <div class="setting-value" id="longBreakTime">15</div>
+                    <button class="setting-btn" id="longBreakPlus">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <div id="notificationText">Session completed!</div>
+    </div>
+  </body>
+  <script src="./js/color-list.js"></script>
+  <script src="./js/pomodoro.js"></script>
+</html>

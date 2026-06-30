@@ -1,0 +1,16 @@
+let allColors = [
+    {dark: "#F15CB5", light: "#ffcbdd"},
+    {dark: "#ffcbdd", light: "#F15CB5"},
+    {dark: "#4BC9EE", light: "#AADEFA"},
+    {dark: "#AADEFA", light: "#4BC9EE"},
+    {dark: "#91BE6D", light: "#C9E9A1"},
+    {dark: "#C9E9A1", light: "#91BE6D"},
+    {dark: "#E63946", light: "#ec6671"},
+    {dark: "#ec6671", light: "#E63946"},
+    {dark: "#F3A361", light: "#f8ba87"},
+    {dark: "#f8ba87", light: "#F3A361"},
+    {dark: "#ffd166", light: "#ffde90"},
+    {dark: "#ffde90", light: "#ffd166"},
+    {dark: "#9c5ce6", light: "#f8aef9"},
+    {dark: "#f8aef9", light: "#9c5ce6"},
+]

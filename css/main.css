@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  --mainColor: #ff9bbe;
+  --secondaryColor: #ffcbdd;
+  --lightblack: #111111;
+  --white: #ffffff;
+  --darkwhite: #cecaca;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--mainColor);
+    color: var(--lightblack);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    -webkit-app-region: drag;
+}
+
+.top-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  -webkit-app-region: no-drag;
+}
+
+.top-bar i{
+  font-size: 30px;
+  color: var(--lightblack);
+}
+
+.top-bar .app-actions{
+  display: flex;
+  float: right;
+  gap: 18px;
+}
+
+#minimize-button{
+  line-height: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+#close-button{
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+#minimize-button:hover{
+  color: var(--white);
+}
+
+#close-button:hover{
+  color: var(--white);
+}
+
+#color{
+  color:var(--mainColor);
+  background-color: var(--secondaryColor);
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: 0.4s;
+  user-select: none;
+  cursor: pointer;
+}
+
+#color:hover{
+  transform: rotate(90deg);
+}
+
+.container {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    padding: 2rem;
+}
+
+.timer-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    width: 300px;
+    height: 300px;
+}
+
+.progress-ring-circle {
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 6;
+    fill: transparent;
+    r: 145;
+    cx: 150;
+    cy: 150;
+}
+
+.progress-ring-progress {
+    stroke: var(--white);
+    stroke-width: 6;
+    fill: transparent;
+    r: 145;
+    cx: 150;
+    cy: 150;
+    stroke-dasharray: 911;
+    stroke-dashoffset: 911;
+    transition: stroke-dashoffset 1s ease;
+    stroke-linecap: round;
+}
+
+.progress-ring-progress.work {
+    stroke: var(--secondaryColor);
+}
+
+.progress-ring-progress.break {
+    stroke: var(--white);
+}
+
+.timer-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time {
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.session-type {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.controls {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: var(--secondaryColor);
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0.25rem 0.25rem black;
+    transition: 0.2s;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    -webkit-app-region: no-drag;
+}
+
+.btn:hover {
+    transform: translate(0.25rem, 0.25rem);
+    box-shadow: 0 0 0 0 black;
+}
+
+.btn.primary {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.settings {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.setting-label {
+    font-size: 0.8rem;
+    font-weight: 300;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.setting-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.setting-btn {
+    background: var(--secondaryColor);
+    border: 1px solid black;
+    color: var(--lightblack);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    -webkit-app-region: no-drag;
+}
+
+.setting-btn:hover {
+    color: var(--white);
+    background: var(--secondaryColor);
+    border-color: var(--white);
+}
+
+.setting-value {
+    font-size: 1rem;
+    font-weight: 300;
+    min-width: 3rem;
+    text-align: center;
+}
+
+.notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: var(--secondaryColor);
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .progress-ring {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .progress-ring-circle,
+    .progress-ring-progress {
+        r: 120;
+        cx: 125;
+        cy: 125;
+        stroke-dasharray: 754;
+        stroke-dashoffset: 754;
+    }
+    
+    .time {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .settings,
+    .controls {
+        gap: 1rem;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.pulsing {
+    animation: pulse 1 ease-in-out infinite;
+}
